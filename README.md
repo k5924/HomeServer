@@ -2,7 +2,7 @@
 
 ## Introduction
 
-> This repository hosts the config files for the home server I created during quarantine in 2020. The services I am running are on a Raspberry Pi 4 2GB model.
+> This repository hosts the docker compose files for the home server I created during quarantine in 2020. The services I am running are on a Raspberry Pi 4 2GB model.<br> I am also running Pihole, Adminer, Watchtower and DDclient as individual containers on the server but these werent made with a docker compose file.
 
 ## Installation
 
