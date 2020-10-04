@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+    image: jsurf/rpi-mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - /path/to/db/on/host/machine:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  app:
+    image: nextcloud
+    ports:
+      - $portOnHostMachine:80
+    links:
+      - db
+    volumes:
+      - /path/to/nextcloud/on/host/machine:/var/www/html
+    restart: always
