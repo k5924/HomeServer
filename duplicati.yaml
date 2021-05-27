@@ -9,10 +9,10 @@ services:
       - PGID=100
       - TZ=Europe/London
     volumes:
-      - /srv/dev-disk-by-label-Store/Containers/Duplicati:/config
-      - /srv/dev-disk-by-label-Store/Containers/db:/NextcloudDB
-      - /srv/dev-disk-by-label-Store/Containers/nextcloud:/Nextcloud
-      - /srv/dev-disk-by-label-Store/Containers/pihole:/Pihole
+      - /path/to/duplicati/container:/config
+      - /path/to/nextcloud/db:/NextcloudDB
+      - /path/to/nextcloud:/Nextcloud
+      - /path/to/pihole:/Pihole
     ports:
       - 8200:8200
     restart: unless-stopped
