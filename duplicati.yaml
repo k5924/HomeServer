@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  duplicati:
+    image: linuxserver/duplicati
+    container_name: duplicati
+    environment:
+      - PUID=998
+      - PGID=100
+      - TZ=Europe/London
+    volumes:
+      - /srv/dev-disk-by-label-Store/Containers/Duplicati:/config
+      - /srv/dev-disk-by-label-Store/Containers/db:/NextcloudDB
+      - /srv/dev-disk-by-label-Store/Containers/nextcloud:/Nextcloud
+      - /srv/dev-disk-by-label-Store/Containers/pihole:/Pihole
+    ports:
+      - 8200:8200
+    restart: unless-stopped
